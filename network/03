@@ -1,0 +1,2 @@
+#!/bin/sh
+ifconfig en0 | grep 'ether ' | cut -f2 | tr ' ' '	' | cut -f2
