@@ -1,2 +1,1 @@
-#!/bin/bash
-cat /etc/passwd | grep -Ev '#' | tr ':' '	' | cut -f1,3,7
+/etc/issue

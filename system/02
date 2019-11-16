@@ -1,0 +1,3 @@
+# must run by root user
+# example: sudo hostname "new system name"
+hostname
