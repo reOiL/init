@@ -1,0 +1,2 @@
+#!/bin/bash
+systemctl status sshd | grep "Main PID" | tr ' ' '\t' | cut -f4
