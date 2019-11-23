@@ -1,0 +1,2 @@
+#  you must put your open key to .ssh/authorized_keys in home directory of your ssh user
+#  For generate pair of ssh keys use command ssh-keygen
