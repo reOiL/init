@@ -1,0 +1,5 @@
+#!/bin/bash
+# PID replace with process PID
+stat -c%X /proc/PID
+# or use( output format -> [[dd-]hh:]mm:ss)
+ps -o etime= -p PID
