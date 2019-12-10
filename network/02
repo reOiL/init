@@ -1,0 +1,4 @@
+a)
+	ifconfig | grep 'broadcast' | tr ' ' '\t' | rev | cut -f1 | rev	
+b)
+	arp -a | tr ' ' '\t' | grep -Ev '^\?' | cut -f2 | tr '()' '\0'
