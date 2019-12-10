@@ -1,0 +1,15 @@
+crontab
+options:
+	-l -> list of task
+	-e -> edit task
+How to add task
+$ crontab
+M H DM M DW /bin/execute/this/script.sh
+------------------------------------
+M - minute (from 0 to 59)
+H - hour (from 0 to 23)
+DM - day of month (from 1 to 31)
+M - month (from 1 to 12)
+DW - day of week (from 0 to 6) (0=Sunday)
+-----------------------------------
+When you done press CTRL+D, that save task
