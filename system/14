@@ -1,0 +1,5 @@
+#!/bin/bash
+# Start in session background
+tail -f /var/log/syslog&
+# Start in system background
+tail -f /var/log/syslog&!
