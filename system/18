@@ -1,0 +1,3 @@
+#!/bin/bash
+# Deafult send SIGTERM, if you want SIGKILL use -s SIGKILL
+systemctl kill sshd
