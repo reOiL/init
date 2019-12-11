@@ -1,0 +1,2 @@
+#!/bin/bash
+cat /etc/passwd | grep -Ev '#' | tr ':' '\t' | cut -f1
