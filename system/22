@@ -1,3 +1,2 @@
 #!/bin/bash
-# use UID range 1000-9999
-cat /etc/passwd | cut -d: -f1,3 | egrep ':[0-9]{4}$' | cut -d: -f1
+sudo adduser USERNAME
