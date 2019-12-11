@@ -1,0 +1,56 @@
+#!/bin/bash
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    03                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jwebber <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/12/11 13:45:36 by jwebber           #+#    #+#              #
+#    Updated: 2019/12/11 13:46:32 by jwebber          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+function randbtw {
+	a=$1
+	b=$2
+	let "rand = RANDOM % (b - a + 1) + a"
+	echo $rand;
+}
+
+function genstr {
+	lines=$(cat $1 | wc -l | tr -d ' ')
+	rand=$(randbtw 1 $lines)
+	echo $(sed -n "$rand"p $1)
+}
+
+if [ -z "$1" ] || [ -z "$2" ];
+then
+	printf "Not enough arguments\n";
+	printf "Usage ./03 f c\n"
+	printf "Where f - file with password and login template\n"
+	printf "Where c - how many account will be generated\n"
+	exit -1;
+fi
+
+if [ ! -f "$1" ];
+then
+	echo "File $1 is not exist" >&2;
+	exit -1;
+fi
+
+re='^[0-9]+$'
+if ! [[ $2 =~ $re ]];
+then	
+	echo "$2 is not a correct number" >&2;
+	exit -1;
+fi
+
+for (( i = 0; i < $2; i++ ))
+do
+	uname="$(genstr $1| awk '{print tolower($0)}')$(randbtw 100 999)"
+	password="$(genstr $1)$(randbtw 9999 99999)"
+	sudo adduser --disabled-password --gecos ""
+	printf "%s\n%s\n" $password $password | sudo passwd $uname
+	printf "%s:%s\n" "$uname" "$password"
+done
