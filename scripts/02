@@ -1,0 +1,3 @@
+#!/bin/bash
+kill -9 $(ps -u test1 | awk 'NR>1{print $1}')
+sudo userdel -f -r test1
