@@ -1,4 +1,6 @@
 a)
 	ifconfig | grep 'broadcast' | tr ' ' '\t' | rev | cut -f1 | rev	
 b)
+	# refrash arp table
+	ping -c 10 $(ifconfig | grep 'broadcast' | tr ' ' '\t' | rev | cut -f1 | rev) > /dev/null
 	arp -a | tr ' ' '\t' | grep -Ev '^\?' | cut -f2 | tr '()' '\0'
