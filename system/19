@@ -1,3 +1,6 @@
 # it a deamon
 
+# all service
 systemctl list-units --type service --all | grep "loaded  " | tr ' ' '\t' | cut -f3
+# only active
+systemctl list-units --type service | cat
