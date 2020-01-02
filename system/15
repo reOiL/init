@@ -1,3 +1,5 @@
 #!/bin/bash
-# replace PID with process id
-kill -9 PID
+# this command kill process
+# sudo kill -9 PID
+# kill all background jobs
+sudo kill -9 $(jobs -p)
