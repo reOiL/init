@@ -30,6 +30,7 @@ then
 	printf "Usage ./03 f c\n"
 	printf "Where f - file with password and login template\n"
 	printf "Where c - how many account will be generated\n"
+	printf "\n\n\e[91m** \e[32mFile must have dictonary one word per line in any register\n\e[0m"
 	exit -1;
 fi
 
