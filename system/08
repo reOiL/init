@@ -1,2 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    08                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jwebber <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/12/11 14:10:20 by jwebber           #+#    #+#              #
+#    Updated: 2019/12/11 14:10:55 by jwebber          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 #  you must put your open key to .ssh/authorized_keys in home directory of your ssh user
 #  For generate pair of ssh keys use command ssh-keygen
+#  or you can copy to remote machine by using command ssh-copy-id
