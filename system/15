@@ -3,3 +3,5 @@
 # sudo kill -9 PID
 # kill all background jobs
 sudo kill -9 $(jobs -p)
+# more powerfull
+sudo kill -SIGTERM $(jobs -p)
